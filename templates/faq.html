@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <h2>{{ _('Frequently Asked Questions') }}</h2>
+        <div class="faq-list">
+            {% for item in faq_items %}
+            <div class="faq-item">
+                <h3>{{ item.question }}</h3>
+                <p>{{ item.answer }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

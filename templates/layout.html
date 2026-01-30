@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ g.locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Event Information') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>{{ _('Our Special Event') }}</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+                    <li><a href="{{ url_for('faq') }}">{{ _('FAQ') }}</a></li>
+                    <li><a href="{{ url_for('map_page') }}">{{ _('Map & Location') }}</a></li>
+                    <li><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <a href="{{ url_for('set_language', lang='en') }}"><img src="{{ url_for('static', filename='img/flag_gb.png') }}" alt="English"></a>
+                <a href="{{ url_for('set_language', lang='pt') }}"><img src="{{ url_for('static', filename='img/flag_pt.png') }}" alt="Português"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 {{ _('Event Organizers') }}. {{ _('All rights reserved.') }}</p>
+        </div>
+    </footer>
+</body>
+</html>
