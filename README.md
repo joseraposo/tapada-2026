@@ -31,6 +31,7 @@ Go to `http://127.0.0.1:5000/`
 
 
 
+
 # Deployment and Security
 
 - <b>Hosting</b>: Get a Virtual Private Server (VPS) from a provider like DigitalOcean, Vultron, or Linode.
