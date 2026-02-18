@@ -2,9 +2,11 @@
 
 {% block content %}
     <div class="content-section">
-        <h2>{{ _('Map & Location') }}</h2>
-        <p>{{ _('The event will be held at the following location. You can use the interactive map below for directions.') }}</p>
-        
+        <h2>{{ _('Map & Location') }}</h2> <br>
+        <h3>{{ _('Address') }}</h3>
+        <p>{{ _('Casa de Hóspedes da Tapada de Mafra, Portão do Codeçal, 2640-602 Mafra') }}</p>
+        <p>{{ _('Coordenadas: 38°57\'39.0\"N 9°17\'35.4\"W') }}</p>
+        <p>{{ _('You can use the interactive map below for directions.') }}</p>
         <div class="map-container">
             <!-- 
               TODO: Replace this with your own Google Maps embed code.
@@ -12,22 +14,29 @@
               2. Click "Share", then "Embed a map".
               3. Copy the HTML and paste it here.
             -->
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2635.429121272453!2d-122.41941548433156!3d37.77492957975823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c5b5a7c7f%3A0x4a501367f076adff!2sSan%20Francisco%20City%20Hall!5e0!3m2!1sen!2sus!4v1678886400000" 
-                width="100%" 
-                height="450" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
+            <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3102.3325948752395!2d-9.29626098092518!3d38.962072906736594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2spt!4v1771257663233!5m2!1spt-PT!2spt"
+                    width="800"
+                    height="600"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+
             </iframe>
         </div>
-        
-        <h3>{{ _('Address') }}</h3>
+        <div>
+            <h3>{{ _('Entrance') }}</h3>
+            <p>{{ _('The entrance is done through the main gates at Tapada Nacional de Mafra; then, you must turn left through a second, smaller gate, and follow through the road (by car!) to arrive at the venue, near Casa de Hóspedes da Tapada.') }}</p>
+            <a><img src="{{ url_for('static', filename='img/trajeto.png') }}"
+                    width="800"
+                    height="600">
+            </a>
+        </div>
         <p>
             <strong>{{ _('Venue Name') }}</strong><br>
-            123 Event Street<br>
-            City, State, 12345
+            Jardim da Casa de Hóspedes da Tapada de Mafra<br>
+            Coordenadas: 38°57'39.0"N 9°17'35.4"W
         </p>
     </div>
 {% endblock %}

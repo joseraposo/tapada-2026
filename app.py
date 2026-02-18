@@ -90,6 +90,7 @@ def login_required(f):
 def index():
     return render_template('index.html')
 
+
 @app.route('/faq')
 @login_required
 def faq():
