@@ -97,17 +97,35 @@ def faq():
     # Example of passing dynamic data to the template
     faq_items = [
         {
-            "question": _("What is the dress code?"),
-            "answer": _("The dress code is casual smart. No shorts or flip-flops, please.")
+            "question": _("At what time should I be there?"),
+            "answer": _("We are planning to start our celebration at 15 h (3 pm), so make you sure you don't miss a bit!")
+        },
+        {
+            "question": _("I'm not sure what to wear..."),
+            "answer": _("The dress code is \"They're taking the hobbits to Isengard! 🧙🏻‍♂  🧝‍♂ \"! (Kidding… unless you were already planning the staff and cloak!) In all seriousness, think smart casual. We’re hoping the day feels more like a relaxed gathering of friends — a garden party with plenty of games, food and laughter — rather than a very formal affair. That said, feel free to dress up if you’re in the mood… just kindly leave the white to the bride. 😉 \n\n P.S.: WE STRONGLY ADVISE YOU TO BRING YOUR SNEAKERS ALONG!")
         },
         {
             "question": _("Is there parking available?"),
             "answer": _("Yes, free parking is available at the venue's main parking lot.")
         },
         {
-            "question": _("Can I bring a guest?"),
-            "answer": _("Please check your invitation. This event is invite-only.")
+            "question": _("Can I bring a plus-one?"),
+            "answer": _("Please check your invitation. This event is invite-only, unless explicitly said otherwise.")
         }
+        ,
+        {
+            "question": _("By when should I let you know if I’ll be attending?"),
+            "answer": _("Please, give us your answer by 31/03/2026.")
+        },
+        {
+            "question": _("How should I let you know if I’ll be attending?"),
+            "answer": _("In true organised fashion, we’ve prepared a lovely little form in the CONFIRMAR PRESENÇA/RVSP section, for you to fill out with the name(s) of the attending guest(s). ")
+        },
+        {
+            "question": _("Are kids welcome?"),
+            "answer": _("Children are welcome, but, please, remember to add their names to the RSVP form so we can include them in our final headcount.")
+        }
+
     ]
     return render_template('faq.html', faq_items=faq_items)
 
@@ -119,4 +137,4 @@ def map_page():
 if __name__ == '__main__':
     # This is for local development only.
     # For production, use a proper WSGI server like Gunicorn or uWSGI.
-    app.run(debug=True)
+    app.run()
