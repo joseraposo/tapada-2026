@@ -134,6 +134,12 @@ def faq():
 def map_page():
     return render_template('map.html')
 
+@app.route('/rvsp')
+@login_required
+def rvsp_func():
+    return render_template('rvsp.html')
+
+
 if __name__ == '__main__':
     # This is for local development only.
     # For production, use a proper WSGI server like Gunicorn or uWSGI.
