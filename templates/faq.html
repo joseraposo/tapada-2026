@@ -6,8 +6,8 @@
         <div class="faq-list">
             {% for item in faq_items %}
             <div class="faq-item">
-                <h3>{{ item.question }}</h3>
-                <p>{{ item.answer }}</p>
+                <h3>{{ _(item.question) }}</h3>
+                <p>{{ _(item.answer) }}</p>
             </div>
             {% endfor %}
         </div>

@@ -2,98 +2,539 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2023-10-27 10:00+0000\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-02-27 15:24+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
+"Generated-By: Babel 2.18.0\n"
 
-msgid "Event Information"
-msgstr "Event Information"
-
-msgid "Our Special Event"
-msgstr "Our Special Event"
-
-msgid "Home"
-msgstr "Home"
-
-msgid "FAQ"
-msgstr "FAQ"
-
-msgid "Map & Location"
-msgstr "Map & Location"
-
-msgid "Logout"
-msgstr "Logout"
-
-msgid "Event Organizers"
-msgstr "Event Organizers"
-
-msgid "All rights reserved."
-msgstr "All rights reserved."
-
+#: app.py:68
 msgid "Invalid access code. Please try again."
 msgstr "Invalid access code. Please try again."
 
+#: app.py:75
 msgid "You have been logged out."
 msgstr "You have been logged out."
 
-msgid "Welcome!"
-msgstr "Welcome!"
+#: app.py:100
+msgid "At what time should I be there?"
+msgstr ""
 
-msgid "We are thrilled to have you join us for this special occasion. Here you will find all the information you need for the event."
-msgstr "We are thrilled to have you join us for this special occasion. Here you will find all the information you need for the event."
+#: app.py:101
+msgid ""
+"We are planning to start our celebration at 15 h (3 pm), so make you sure"
+" you don't miss a bit!"
+msgstr ""
 
-msgid "Event Banner"
-msgstr "Event Banner"
+#: app.py:104
+msgid "I'm not sure what to wear..."
+msgstr ""
 
-msgid "Explore the sections above to find answers to frequently asked questions and directions to the venue."
-msgstr "Explore the sections above to find answers to frequently asked questions and directions to the venue."
+#: app.py:105
+msgid ""
+"The dress code is \"They're taking the hobbits to Isengard! 🧙🏻‍♂  🧝‍♂ \"!"
+" (Kidding… unless you were already planning the staff and cloak!) In all "
+"seriousness, think smart casual. We’re hoping the day feels more like a "
+"relaxed gathering of friends — a garden party with plenty of games, food "
+"and laughter — rather than a very formal affair. That said, feel free to "
+"dress up if you’re in the mood… just kindly leave the white to the bride."
+" 😉 \n"
+"\n"
+" P.S.: WE STRONGLY ADVISE YOU TO BRING YOUR SNEAKERS ALONG!"
+msgstr ""
 
-msgid "Frequently Asked Questions"
-msgstr "Frequently Asked Questions"
-
-msgid "What is the dress code?"
-msgstr "What is the dress code?"
-
-msgid "The dress code is casual smart. No shorts or flip-flops, please."
-msgstr "The dress code is casual smart. No shorts or flip-flops, please."
-
+#: app.py:108
 msgid "Is there parking available?"
 msgstr "Is there parking available?"
 
+#: app.py:109
 msgid "Yes, free parking is available at the venue's main parking lot."
 msgstr "Yes, free parking is available at the venue's main parking lot."
 
-msgid "Can I bring a guest?"
+#: app.py:112
+#, fuzzy
+msgid "Can I bring a plus-one?"
 msgstr "Can I bring a guest?"
 
-msgid "Please check your invitation. This event is invite-only."
+#: app.py:113
+#, fuzzy
+msgid ""
+"Please check your invitation. This event is invite-only, unless "
+"explicitly said otherwise."
 msgstr "Please check your invitation. This event is invite-only."
 
-msgid "The event will be held at the following location. You can use the interactive map below for directions."
-msgstr "The event will be held at the following location. You can use the interactive map below for directions."
+#: app.py:116
+msgid "By when should I let you know if I’ll be attending?"
+msgstr ""
 
-msgid "Address"
-msgstr "Address"
+#: app.py:117
+msgid "Please, give us your answer by 31/03/2026."
+msgstr ""
 
-msgid "Venue Name"
-msgstr "Venue Name"
+#: app.py:120
+msgid "How should I let you know if I’ll be attending?"
+msgstr ""
 
+#: app.py:121
+msgid ""
+"In true organised fashion, we’ve prepared a lovely little form in the "
+"CONFIRMAR PRESENÇA/RVSP section, for you to fill out with the name(s) of "
+"the attending guest(s). "
+msgstr ""
+
+#: app.py:124
+msgid "Are kids welcome?"
+msgstr ""
+
+#: app.py:125
+msgid ""
+"Children are welcome, but, please, remember to add their names to the "
+"RSVP form so we can include them in our final headcount."
+msgstr ""
+
+#: templates/faq.html:5
+msgid "Frequently Asked Questions"
+msgstr "Frequently Asked Questions"
+
+#: templates/index.html:5
+msgid "Welcome!"
+msgstr "Welcome!"
+
+#: templates/index.html:6
+msgid ""
+"We are thrilled to have you join us for this special occasion. Here you "
+"will find all the information you need for the event."
+msgstr ""
+"We are thrilled to have you join us for this special occasion. Here you "
+"will find all the information you need for the event."
+
+#: templates/index.html:7
+msgid "Event Banner"
+msgstr "Event Banner"
+
+#: templates/index.html:8
+#, fuzzy
+msgid ""
+"Explore the sections above to find answers to frequently asked questions,"
+" directions to the venue and RVSP form."
+msgstr ""
+"Explore the sections above to find answers to frequently asked questions "
+"and directions to the venue."
+
+#: templates/layout.html:6
+msgid "Event Information"
+msgstr "Event Information"
+
+#: templates/layout.html:13
+msgid "Lúcia & Zé´s Wedding"
+msgstr ""
+
+#: templates/layout.html:16
+msgid "Home"
+msgstr "Home"
+
+#: templates/layout.html:17
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/layout.html:18 templates/map.html:5
+msgid "Map & Location"
+msgstr "Map & Location"
+
+#: templates/layout.html:19
+msgid "Confirm attendance/RVSP"
+msgstr ""
+
+#: templates/layout.html:20
+msgid "Logout"
+msgstr "Logout"
+
+#: templates/layout.html:43
+#, fuzzy
+msgid "Lúcia e Zé - Event Organizers"
+msgstr "Event Organizers"
+
+#: templates/layout.html:43
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+#: templates/login.html:6
 msgid "Access Event"
 msgstr "Access Event"
 
+#: templates/login.html:11
 msgid "Event Access"
 msgstr "Event Access"
 
+#: templates/login.html:12
 msgid "Please enter the access code provided in your invitation."
 msgstr "Please enter the access code provided in your invitation."
 
+#: templates/login.html:23
 msgid "Access Code"
 msgstr "Access Code"
 
+#: templates/login.html:24
 msgid "Enter"
 msgstr "Enter"
+
+#: templates/map.html:6
+msgid "Address"
+msgstr "Address"
+
+#: templates/map.html:7
+msgid "Casa de Hóspedes da Tapada de Mafra, Portão do Codeçal, 2640-602 Mafra"
+msgstr ""
+
+#: templates/map.html:8
+msgid "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W"
+msgstr ""
+
+#: templates/map.html:9
+#, fuzzy
+msgid "You can use the interactive map below for directions."
+msgstr ""
+"The event will be held at the following location. You can use the "
+"interactive map below for directions."
+
+#: templates/map.html:29
+#, fuzzy
+msgid "Entrance"
+msgstr "Enter"
+
+#: templates/map.html:30
+msgid ""
+"The entrance is done through the main gates at Tapada Nacional de Mafra; "
+"then, you must turn left through a second, smaller gate, and follow "
+"through the road (by car!) to arrive at the venue, near Casa de Hóspedes "
+"da Tapada."
+msgstr ""
+
+#: templates/rvsp.html:5
+msgid "FORM"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/_termui_impl.py:613
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/_termui_impl.py:617
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1114
+#: venv/lib/python3.10/site-packages/click/core.py:1151
+#, python-brace-format
+msgid "{text} {deprecated_message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1170
+msgid "Options"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1245
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1264
+#, python-brace-format
+msgid "DeprecationWarning: The command {name!r} is deprecated.{extra_message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1448
+msgid "Aborted!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1822
+msgid "Commands"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1853
+msgid "Missing command."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1931
+#, python-brace-format
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2355
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2378
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2567
+#, python-brace-format
+msgid ""
+"DeprecationWarning: The {param_type} {name!r} is "
+"deprecated.{extra_message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:3015
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:3018
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:3022
+msgid "required"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:3082
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:522
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:548
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:50
+#: venv/lib/python3.10/site-packages/click/exceptions.py:89
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:81
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:130
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:132
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:190
+msgid "Missing argument"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:192
+msgid "Missing option"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:194
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:196
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:203
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:223
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:235
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:282
+msgid "unknown error"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:289
+#, python-brace-format
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:199
+#, python-brace-format
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:381
+#, python-brace-format
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:444
+#, python-brace-format
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/shell_completion.py:332
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/shell_completion.py:339
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:165
+#, fuzzy
+msgid "Repeat for confirmation"
+msgstr "Event Information"
+
+#: venv/lib/python3.10/site-packages/click/termui.py:181
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:183
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:194
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:253
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:872
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:332
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:369
+#, python-brace-format
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:460
+#, python-brace-format
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:482
+#, python-brace-format
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:538
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:719
+#, python-brace-format
+msgid "{value!r} is not a valid boolean. Recognized values: {states}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:747
+#, python-brace-format
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:937
+msgid "file"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:939
+msgid "directory"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:941
+msgid "path"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:988
+#, python-brace-format
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:997
+#, python-brace-format
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:1005
+#, python-brace-format
+msgid "{name} {filename!r} is a directory."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:1014
+#, python-brace-format
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:1023
+#, python-brace-format
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:1032
+#, python-brace-format
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:1099
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#~ msgid "Our Special Event"
+#~ msgstr "Our Special Event"
+
+#~ msgid "What is the dress code?"
+#~ msgstr "What is the dress code?"
+
+#~ msgid "The dress code is casual smart. No shorts or flip-flops, please."
+#~ msgstr "The dress code is casual smart. No shorts or flip-flops, please."
+
+#~ msgid "Venue Name"
+#~ msgstr "Venue Name"
+
+#~ msgid "Casamento Lúcia & Zé"
+#~ msgstr ""
+

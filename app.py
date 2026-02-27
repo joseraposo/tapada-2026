@@ -111,8 +111,7 @@ def faq():
         {
             "question": _("Can I bring a plus-one?"),
             "answer": _("Please check your invitation. This event is invite-only, unless explicitly said otherwise.")
-        }
-        ,
+        },
         {
             "question": _("By when should I let you know if I’ll be attending?"),
             "answer": _("Please, give us your answer by 31/03/2026.")
