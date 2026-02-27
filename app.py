@@ -1,4 +1,5 @@
 import logging
+import sqlite3
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, session, flash, g
 from flask_babel import Babel, gettext as _
@@ -36,6 +37,22 @@ handler = logging.FileHandler('visits.log')
 formatter = logging.Formatter('%(asctime)s - %(message)s')
 handler.setFormatter(formatter)
 visit_logger.addHandler(handler)
+
+#---- DB -----
+
+def init_db():
+    conn = sqlite3.connect("guests.db") #if db doesnt exist -> creates it; if does exist - connects to the db
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS guests (
+            name TEXT NOT NULL
+        )
+    """)
+
+    conn.commit()
+    conn.close()
+
 
 
 # --- Routes ---
@@ -133,10 +150,57 @@ def faq():
 def map_page():
     return render_template('map.html')
 
-@app.route('/rvsp')
+
+
+
+
+# @app.route('/rvsp')
+# @login_required
+# def rvsp_func():
+#     return render_template('rvsp.html')
+
+
+@app.route("/rvsp", methods=["GET", "POST"])
 @login_required
-def rvsp_func():
-    return render_template('rvsp.html')
+def rvsp():
+    if request.method == "POST":
+        name = request.form.get("name")
+
+        if name:
+            conn = sqlite3.connect("guests.db")
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO guests (name) VALUES (?)", (name,))
+            conn.commit()
+            conn.close()
+
+            return redirect(url_for("thank_you"))
+
+    return render_template("rvsp.html")
+
+
+@app.route("/thank-you")
+def thank_you():
+    return "Thank you for confirming!"
+
+
+
+#---------------------
+with app.app_context():
+    init_db()
+#sitio correto para estar?
+
+
+
+#--- admin route ----
+@app.route("/guests")
+def guests():
+    conn = sqlite3.connect("guests.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT name FROM guests")
+    guest_list = cursor.fetchall()
+    conn.close()
+
+    return "<br>".join([g[0] for g in guest_list])
 
 
 if __name__ == '__main__':

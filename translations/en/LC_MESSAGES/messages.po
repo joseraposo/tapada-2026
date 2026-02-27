@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-27 15:24+0000\n"
+"POT-Creation-Date: 2026-02-27 16:05+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -214,6 +214,10 @@ msgid ""
 "then, you must turn left through a second, smaller gate, and follow "
 "through the road (by car!) to arrive at the venue, near Casa de Hóspedes "
 "da Tapada."
+msgstr ""
+
+#: templates/map.html:35
+msgid "Casa de Hóspedes da Tapada."
 msgstr ""
 
 #: templates/rvsp.html:5

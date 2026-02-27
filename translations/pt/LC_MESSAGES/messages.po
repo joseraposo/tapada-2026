@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-27 15:24+0000\n"
+"POT-Creation-Date: 2026-02-27 16:05+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -32,7 +32,7 @@ msgid ""
 " you don't miss a bit!"
 msgstr ""
 "Planeamos começar a nossa celebração por volta das 15h (3 pm), pelo que "
-"tenta chegar a tempo de não perderes uma pitada!"
+"tenta chegar a tempo de não perderes pitada!"
 
 #: app.py:104
 msgid "I'm not sure what to wear..."
@@ -174,13 +174,12 @@ msgid "Logout"
 msgstr "Sair"
 
 #: templates/layout.html:43
-#, fuzzy
 msgid "Lúcia e Zé - Event Organizers"
-msgstr "Organizadores do Evento"
+msgstr ""
 
 #: templates/layout.html:43
 msgid "All rights reserved."
-msgstr "Todos os direitos reservados."
+msgstr ""
 
 #: templates/login.html:6
 msgid "Access Event"
@@ -215,16 +214,14 @@ msgid "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W"
 msgstr ""
 
 #: templates/map.html:9
-#, fuzzy
 msgid "You can use the interactive map below for directions."
 msgstr ""
 "O evento será realizado no seguinte local. Pode usar o mapa interativo "
 "abaixo para obter direções."
 
 #: templates/map.html:29
-#, fuzzy
 msgid "Entrance"
-msgstr "Entrar"
+msgstr "Entrada"
 
 #: templates/map.html:30
 msgid ""
@@ -232,6 +229,13 @@ msgid ""
 "then, you must turn left through a second, smaller gate, and follow "
 "through the road (by car!) to arrive at the venue, near Casa de Hóspedes "
 "da Tapada."
+msgstr ""
+"A entrada é feita pelos portões principais da Tapada Nacional de Mafra; "
+"deves depois seguir (de carro!) por um segundo portão mais pequeno à tua "
+"esquerda, até chegares ao local do evento, perto da Casa de Hóspedes."
+
+#: templates/map.html:35
+msgid "Casa de Hóspedes da Tapada."
 msgstr ""
 
 #: templates/rvsp.html:5
