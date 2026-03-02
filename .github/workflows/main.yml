@@ -1,0 +1,46 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            set -e
+
+            echo $TESTE
+
+            APP_DIR="/var/www/tapada"
+            VENV="$APP_DIR/venv"
+            SERVICE="tapada"
+
+            echo "==> Pulling latest code..."
+            cd $APP_DIR
+            git pull origin main
+
+            echo "==> Installing/updating Python dependencies..."
+            $VENV/bin/pip install -r requirements.txt --quiet
+
+            echo "==> Compiling Babel assets..."
+            $VENV/bin/pybabel compile -d $APP_DIR/translations
+
+            echo "==> Restarting gunicorn service..."
+            sudo systemctl restart $SERVICE
+
+            echo "==> Reloading nginx..."
+            sudo systemctl reload nginx
+
+            echo "==> Done! Deployment successful."
