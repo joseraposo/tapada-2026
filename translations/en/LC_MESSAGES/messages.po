@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-02-27 16:05+0000\n"
+"POT-Creation-Date: 2026-03-02 17:53+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -14,29 +14,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: app.py:68
+#: app.py:85
 msgid "Invalid access code. Please try again."
 msgstr "Invalid access code. Please try again."
 
-#: app.py:75
+#: app.py:92
 msgid "You have been logged out."
 msgstr "You have been logged out."
 
-#: app.py:100
+#: app.py:117
+msgid "Where will be the event?"
+msgstr ""
+
+#: app.py:118
+msgid ""
+"Our celebration will take place in the grounds and buildings surrounding "
+"Casa de Hóspedes da Tapada de Mafra."
+msgstr ""
+
+#: app.py:122
+msgid "What should I expect during the day?"
+msgstr ""
+
+#: app.py:123
+msgid ""
+"The first part of our celebration will be led outdoors, in the garden and"
+" surroundings of Casa de Hóspedes da Tapada. We intend to make the most "
+"of all the nature that Tapada has to offer, so keep your eyes peeled - if"
+" you are lucky, you may catch a glimpse of some of the wildlife...! We "
+"are planning on having some traditional games during the afternoon, so, "
+"please bring along your good humor and fair play! During the evening, we "
+"will procede to the main pavillion, in order to enjoy a little bit of "
+"dancing!"
+msgstr ""
+
+#: app.py:126
 msgid "At what time should I be there?"
 msgstr ""
 
-#: app.py:101
+#: app.py:127
 msgid ""
 "We are planning to start our celebration at 15 h (3 pm), so make you sure"
 " you don't miss a bit!"
 msgstr ""
 
-#: app.py:104
-msgid "I'm not sure what to wear..."
+#: app.py:130
+msgid "I'm not sure what to wear, if you're going to make me run around..."
 msgstr ""
 
-#: app.py:105
+#: app.py:131
 msgid ""
 "The dress code is \"They're taking the hobbits to Isengard! 🧙🏻‍♂  🧝‍♂ \"!"
 " (Kidding… unless you were already planning the staff and cloak!) In all "
@@ -49,64 +75,86 @@ msgid ""
 " P.S.: WE STRONGLY ADVISE YOU TO BRING YOUR SNEAKERS ALONG!"
 msgstr ""
 
-#: app.py:108
+#: app.py:134
 msgid "Is there parking available?"
 msgstr "Is there parking available?"
 
-#: app.py:109
+#: app.py:135
 msgid "Yes, free parking is available at the venue's main parking lot."
 msgstr "Yes, free parking is available at the venue's main parking lot."
 
-#: app.py:112
+#: app.py:138
 #, fuzzy
 msgid "Can I bring a plus-one?"
 msgstr "Can I bring a guest?"
 
-#: app.py:113
+#: app.py:139
 #, fuzzy
 msgid ""
 "Please check your invitation. This event is invite-only, unless "
 "explicitly said otherwise."
 msgstr "Please check your invitation. This event is invite-only."
 
-#: app.py:116
+#: app.py:142
 msgid "By when should I let you know if I’ll be attending?"
 msgstr ""
 
-#: app.py:117
+#: app.py:143
 msgid "Please, give us your answer by 31/03/2026."
 msgstr ""
 
-#: app.py:120
+#: app.py:146
 msgid "How should I let you know if I’ll be attending?"
 msgstr ""
 
-#: app.py:121
+#: app.py:147
 msgid ""
 "In true organised fashion, we’ve prepared a lovely little form in the "
 "CONFIRMAR PRESENÇA/RVSP section, for you to fill out with the name(s) of "
 "the attending guest(s). "
 msgstr ""
 
-#: app.py:124
+#: app.py:150
 msgid "Are kids welcome?"
 msgstr ""
 
-#: app.py:125
+#: app.py:151
 msgid ""
 "Children are welcome, but, please, remember to add their names to the "
 "RSVP form so we can include them in our final headcount."
+msgstr ""
+
+#: app.py:154
+msgid "OMG, I see a deer, may I go pet him?"
+msgstr ""
+
+#: app.py:155
+msgid ""
+"Please, bear in mind that Tapada is a wildlife reserve - while the "
+"animals may be used to human visitors, they remain wild. For their safety"
+" and yours, we kindly ask that you do not approach or feed them."
+msgstr ""
+
+#: app.py:158
+msgid "I have a question that's not answered in the FAQ section..."
+msgstr ""
+
+#: app.py:159
+msgid ""
+"In case you have extra questions, feel free to reach our costumer service"
+" by phone at 00351917200606 or 00351961115694 (phone calls, SMS or "
+"whatsapp), Mon-Fri from 8 a.m.to 8 p.m."
 msgstr ""
 
 #: templates/faq.html:5
 msgid "Frequently Asked Questions"
 msgstr "Frequently Asked Questions"
 
-#: templates/index.html:5
+#: templates/index.html:6
 msgid "Welcome!"
 msgstr "Welcome!"
 
-#: templates/index.html:6
+#: templates/index.html:7
 msgid ""
 "We are thrilled to have you join us for this special occasion. Here you "
 "will find all the information you need for the event."
@@ -114,11 +162,11 @@ msgstr ""
 "We are thrilled to have you join us for this special occasion. Here you "
 "will find all the information you need for the event."
 
-#: templates/index.html:7
+#: templates/index.html:8
 msgid "Event Banner"
 msgstr "Event Banner"
 
-#: templates/index.html:8
+#: templates/index.html:9
 #, fuzzy
 msgid ""
 "Explore the sections above to find answers to frequently asked questions,"
@@ -220,9 +268,18 @@ msgstr ""
 msgid "Casa de Hóspedes da Tapada."
 msgstr ""
 
-#: templates/rvsp.html:5
-msgid "FORM"
+#: templates/rvsp.html:6
+msgid "Name of the guest"
 msgstr ""
+
+#: templates/rvsp.html:8
+msgid "Confirm attendance"
+msgstr ""
+
+#: templates/thankyou.html:5
+#, fuzzy
+msgid "Thank you for confirming!"
+msgstr "Event Information"
 
 #: venv/lib/python3.10/site-packages/click/_termui_impl.py:613
 #, python-brace-format
@@ -540,5 +597,25 @@ msgstr[1] ""
 #~ msgstr "Venue Name"
 
 #~ msgid "Casamento Lúcia & Zé"
+#~ msgstr ""
+
+#~ msgid "FORM"
+#~ msgstr ""
+
+#~ msgid "I'm not sure what to wear..."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In case you have extra questions, "
+#~ "feel free to reach our costumer "
+#~ "service by phone at 00351917200606 or"
+#~ " 00351961115694 (phone calls, SMS or "
+#~ "whatsapp)"
+#~ msgstr ""
+
+#~ msgid "Your name"
+#~ msgstr ""
+
+#~ msgid "Confirm"
 #~ msgstr ""
 

@@ -1,7 +1,7 @@
 import logging
 import sqlite3
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, session, flash, g
+from flask import Flask, render_template, request, redirect, url_for, session, flash, g, Response
 from flask_babel import Babel, gettext as _
 from config import Config
 
@@ -38,10 +38,11 @@ formatter = logging.Formatter('%(asctime)s - %(message)s')
 handler.setFormatter(formatter)
 visit_logger.addHandler(handler)
 
-#---- DB -----
+
+# --- DB ---
 
 def init_db():
-    conn = sqlite3.connect("guests.db") #if db doesnt exist -> creates it; if does exist - connects to the db
+    conn = sqlite3.connect("guests.db") #if DB doesn´t exist -> creates it; if does exist - connects to the DB
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -52,7 +53,6 @@ def init_db():
 
     conn.commit()
     conn.close()
-
 
 
 # --- Routes ---
@@ -114,11 +114,20 @@ def faq():
     # Example of passing dynamic data to the template
     faq_items = [
         {
+            "question": _("Where will be the event?"),
+            "answer": _("Our celebration will take place in the grounds and buildings surrounding Casa de Hóspedes da Tapada de Mafra.")
+        },
+
+        {
+            "question": _("What should I expect during the day?"),
+            "answer": _("The first part of our celebration will be led outdoors, in the garden and surroundings of Casa de Hóspedes da Tapada. We intend to make the most of all the nature that Tapada has to offer, so keep your eyes peeled - if you are lucky, you may catch a glimpse of some of the wildlife...! We are planning on having some traditional games during the afternoon, so, please bring along your good humor and fair play! During the evening, we will procede to the main pavillion, in order to enjoy a little bit of dancing!")
+        },
+        {
             "question": _("At what time should I be there?"),
             "answer": _("We are planning to start our celebration at 15 h (3 pm), so make you sure you don't miss a bit!")
         },
         {
-            "question": _("I'm not sure what to wear..."),
+            "question": _("I'm not sure what to wear, if you're going to make me run around..."),
             "answer": _("The dress code is \"They're taking the hobbits to Isengard! 🧙🏻‍♂  🧝‍♂ \"! (Kidding… unless you were already planning the staff and cloak!) In all seriousness, think smart casual. We’re hoping the day feels more like a relaxed gathering of friends — a garden party with plenty of games, food and laughter — rather than a very formal affair. That said, feel free to dress up if you’re in the mood… just kindly leave the white to the bride. 😉 \n\n P.S.: WE STRONGLY ADVISE YOU TO BRING YOUR SNEAKERS ALONG!")
         },
         {
@@ -140,6 +149,14 @@ def faq():
         {
             "question": _("Are kids welcome?"),
             "answer": _("Children are welcome, but, please, remember to add their names to the RSVP form so we can include them in our final headcount.")
+        },
+        {
+            "question": _("OMG, I see a deer, may I go pet him?"),
+            "answer": _("Please, bear in mind that Tapada is a wildlife reserve - while the animals may be used to human visitors, they remain wild. For their safety and yours, we kindly ask that you do not approach or feed them.")
+        },
+        {
+            "question": _("I have a question that's not answered in the FAQ section..."),
+            "answer": _("In case you have extra questions, feel free to reach our costumer service by phone at 00351917200606 or 00351961115694 (phone calls, SMS or whatsapp), Mon-Fri from 8 a.m.to 8 p.m.")
         }
 
     ]
@@ -149,15 +166,6 @@ def faq():
 @login_required
 def map_page():
     return render_template('map.html')
-
-
-
-
-
-# @app.route('/rvsp')
-# @login_required
-# def rvsp_func():
-#     return render_template('rvsp.html')
 
 
 @app.route("/rvsp", methods=["GET", "POST"])
@@ -180,20 +188,69 @@ def rvsp():
 
 @app.route("/thank-you")
 def thank_you():
-    return "Thank you for confirming!"
+    return render_template('thankyou.html')
 
 
+#--- admin route without password ----
+# @app.route("/guests")
+# def guests():
+#     conn = sqlite3.connect("guests.db")
+#     cursor = conn.cursor()
+#     cursor.execute("SELECT name FROM guests")
+#     guest_list = cursor.fetchall()
+#     conn.close()
+#
+#     return "<br>".join([g[0] for g in guest_list])
 
-#---------------------
-with app.app_context():
-    init_db()
-#sitio correto para estar?
 
+#--- admin route with password ----
+# import os
+# ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
+#
+# @app.route("/guests")
+# def guests():
+#     auth = request.authorization
+#
+#     if not auth or auth.password != ADMIN_PASSWORD:
+#         return Response(
+#             "Authentication required",
+#             401,
+#             {"WWW-Authenticate": 'Basic realm="Login Required"'}
+#         )
+#
+#     conn = sqlite3.connect("guests.db")
+#     cursor = conn.cursor()
+#     cursor.execute("SELECT name FROM guests")
+#     guest_list = cursor.fetchall()
+#     conn.close()
+#
+#     return "<br>".join([g[0] for g in guest_list])
 
+#--- admin route with password option 2 --- gosto mais
 
-#--- admin route ----
+import os
+
+app.secret_key = "supersecretkey"
+
+@app.route("/admin-login", methods=["GET", "POST"])
+def admin_login():
+    if request.method == "POST":
+        if request.form.get("password") == os.environ.get("ADMIN_PASSWORD"): #modifiquei parte final
+            session["admin"] = True
+            return redirect(url_for("guests"))
+
+    return """
+        <form method="post">
+            <input type="password" name="password">
+            <button type="submit">Login</button>
+        </form>
+    """
+
 @app.route("/guests")
 def guests():
+    if not session.get("admin"):
+        return redirect(url_for("admin_login"))
+
     conn = sqlite3.connect("guests.db")
     cursor = conn.cursor()
     cursor.execute("SELECT name FROM guests")
@@ -203,7 +260,14 @@ def guests():
     return "<br>".join([g[0] for g in guest_list])
 
 
+#---------------------
+with app.app_context():
+    init_db()
+#sitio correto para estar?
+
+
+
 if __name__ == '__main__':
-    # This is for local development only.
+    # for local development only.
     # For production, use a proper WSGI server like Gunicorn or uWSGI.
     app.run()

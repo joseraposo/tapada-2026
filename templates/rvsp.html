@@ -3,9 +3,9 @@
 {% block content %}
     <div class="content-section">
         <form method="POST">
-            <label for="name">Your name:</label>
+            <label for="name">{{ _('Name of the guest') }}:</label>
             <input type="text" name="name" required>
-            <button type="submit">Confirm</button>
+            <button type="submit">{{ _('Confirm attendance') }}</button>
         </form>
 
     </div>
