@@ -1,6 +1,5 @@
 import logging
 import sqlite3
-from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, session, flash, g, Response
 from flask_babel import Babel, gettext as _
 from config import Config
@@ -39,10 +38,11 @@ handler.setFormatter(formatter)
 visit_logger.addHandler(handler)
 
 
+
 # --- DB ---
 
 def init_db():
-    conn = sqlite3.connect("guests.db") #if DB doesn´t exist -> creates it; if does exist - connects to the DB
+    conn = sqlite3.connect(app.config['DB_LOCATION']) #if DB doesn´t exist -> creates it; if does exist - connects to the DB
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -167,21 +167,34 @@ def faq():
 def map_page():
     return render_template('map.html')
 
-
 @app.route("/rvsp", methods=["GET", "POST"])
 @login_required
 def rvsp():
     if request.method == "POST":
-        name = request.form.get("name")
+        names = request.form.getlist("name")
 
-        if name:
-            conn = sqlite3.connect("guests.db")
-            cursor = conn.cursor()
-            cursor.execute("INSERT INTO guests (name) VALUES (?)", (name,))
-            conn.commit()
-            conn.close()
+        if not names:
+            flash(_('Please add at least one guest.'))
+            return redirect(url_for('rvsp'))
 
-            return redirect(url_for("thank_you"))
+        conn = sqlite3.connect("guests.db")
+        cursor = conn.cursor()
+
+        for name in names:
+            name = name.strip()
+
+            if len(name) > 40:
+                flash(_('Name must be 40 characters or fewer.'))
+                conn.close()
+                return redirect(url_for('rvsp'))
+
+            if name:
+                cursor.execute("INSERT INTO guests (name) VALUES (?)", (name,))
+
+        conn.commit()
+        conn.close()
+
+        return redirect(url_for("thank_you"))
 
     return render_template("rvsp.html")
 
@@ -191,80 +204,10 @@ def thank_you():
     return render_template('thankyou.html')
 
 
-#--- admin route without password ----
-# @app.route("/guests")
-# def guests():
-#     conn = sqlite3.connect("guests.db")
-#     cursor = conn.cursor()
-#     cursor.execute("SELECT name FROM guests")
-#     guest_list = cursor.fetchall()
-#     conn.close()
-#
-#     return "<br>".join([g[0] for g in guest_list])
-
-
-#--- admin route with password ----
-# import os
-# ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD")
-#
-# @app.route("/guests")
-# def guests():
-#     auth = request.authorization
-#
-#     if not auth or auth.password != ADMIN_PASSWORD:
-#         return Response(
-#             "Authentication required",
-#             401,
-#             {"WWW-Authenticate": 'Basic realm="Login Required"'}
-#         )
-#
-#     conn = sqlite3.connect("guests.db")
-#     cursor = conn.cursor()
-#     cursor.execute("SELECT name FROM guests")
-#     guest_list = cursor.fetchall()
-#     conn.close()
-#
-#     return "<br>".join([g[0] for g in guest_list])
-
-#--- admin route with password option 2 --- gosto mais
-
-import os
-
-app.secret_key = "supersecretkey"
-
-@app.route("/admin-login", methods=["GET", "POST"])
-def admin_login():
-    if request.method == "POST":
-        if request.form.get("password") == os.environ.get("ADMIN_PASSWORD"): #modifiquei parte final
-            session["admin"] = True
-            return redirect(url_for("guests"))
-
-    return """
-        <form method="post">
-            <input type="password" name="password">
-            <button type="submit">Login</button>
-        </form>
-    """
-
-@app.route("/guests")
-def guests():
-    if not session.get("admin"):
-        return redirect(url_for("admin_login"))
-
-    conn = sqlite3.connect("guests.db")
-    cursor = conn.cursor()
-    cursor.execute("SELECT name FROM guests")
-    guest_list = cursor.fetchall()
-    conn.close()
-
-    return "<br>".join([g[0] for g in guest_list])
-
 
 #---------------------
 with app.app_context():
     init_db()
-#sitio correto para estar?
-
 
 
 if __name__ == '__main__':

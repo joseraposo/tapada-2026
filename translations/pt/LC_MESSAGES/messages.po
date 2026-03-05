@@ -231,7 +231,7 @@ msgstr "FAQ"
 
 #: templates/layout.html:18 templates/map.html:5
 msgid "Map & Location"
-msgstr "Mapa e Localização"
+msgstr "Mapa & Localização"
 
 #: templates/layout.html:19
 msgid "Confirm attendance/RVSP"

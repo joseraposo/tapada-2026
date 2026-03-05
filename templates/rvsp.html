@@ -3,10 +3,45 @@
 {% block content %}
     <div class="content-section">
         <form method="POST">
-            <label for="name">{{ _('Name of the guest') }}:</label>
-            <input type="text" name="name" required>
+            <div id="guests-container">
+                <div class="guest-entry">
+                    <label>{{ _('Name of the guest') }}:</label>
+                    <input
+                            type="text"
+                            name="name"
+                            pattern="[A-Za-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF ]{1,40}"
+                            maxlength="40"
+                            title="{{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') }}"
+                            required>
+                </div>
+            </div>
+
+            <button type="button" id="add-guest">{{ _('Add guest') }}</button>
             <button type="submit">{{ _('Confirm attendance') }}</button>
         </form>
 
+        <script>
+            document.getElementById('add-guest').addEventListener('click', function () {
+                const container = document.getElementById('guests-container');
+                const entry = document.createElement('div');
+                entry.classList.add('guest-entry');
+                entry.innerHTML = `
+                    <label>{{ _('Name of the guest') }}:</label>
+                    <input
+                        type="text"
+                        name="name"
+                        pattern="[A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF ]{1,40}"
+                        maxlength="40"
+                        title="{{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') }}"
+                        required>
+                    <button type="button" class="remove-guest">✕</button>
+                `;
+                container.appendChild(entry);
+
+                entry.querySelector('.remove-guest').addEventListener('click', function () {
+                    entry.remove();
+                });
+            });
+        </script>
     </div>
 {% endblock %}
