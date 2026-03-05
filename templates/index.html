@@ -1,10 +1,42 @@
+
 {% extends "layout.html" %}
 
 {% block content %}
+
     <div class="content-section">
         <h2>{{ _('Welcome!') }}</h2>
         <p>{{ _('We are thrilled to have you join us for this special occasion. Here you will find all the information you need for the event.') }}</p>
         <img src="{{ url_for('static', filename='img/event_banner.png') }}" alt="{{ _('Event Banner') }}" class="banner-image" style="width: 100%; height: auto;">
         <p>{{ _('Explore the sections above to find answers to frequently asked questions, directions to the venue and RVSP form.') }}</p>
     </div>
+    <div class="content-section">
+        <h2 class="tictac">{{ _('Tic Tac!') }}</h2>
+        <h2 id="countdown"></h2>
+        <script>
+              const eventDate = new Date("2026-09-05T15:00:00").getTime();
+
+              const timer = setInterval(function () {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+
+                if (distance < 0) {
+                  clearInterval(timer);
+                  document.getElementById("countdown").innerHTML = "The event has started!";
+                  return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((distance / (1000 * 60)) % 60);
+                const seconds = Math.floor((distance / 1000) % 60);
+
+                document.getElementById("countdown").innerHTML =
+                  days + "d " +
+                  hours + "h " +
+                  minutes + "m " +
+                  seconds + "s ";
+              }, 1000);
+        </script>
+    </div>
+
 {% endblock %}
