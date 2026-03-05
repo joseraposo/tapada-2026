@@ -14,3 +14,5 @@ class Config:
 
     # Supported languages
     LANGUAGES = ['en', 'pt']
+
+    DB_LOCATION = os.environ.get('DB_LOCATION')
