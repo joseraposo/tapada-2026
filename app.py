@@ -1,5 +1,5 @@
-import logging
 import sqlite3
+import re
 from flask import Flask, render_template, request, redirect, url_for, session, flash, g, Response
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -165,7 +165,11 @@ def rvsp():
         names = request.form.getlist("name")
 
         if not names:
-            flash(_('Please add at least one guest.'))
+            #flash(_('Please add at least one guest.'), "error")  #validação é apanhada 1o em frontend
+            return redirect(url_for('rvsp'))
+
+        if len(names) > 10: #antes da ligação à BD é mais eficiente, porque se não cumprir critério não abre ligação desnecessária à BD
+            #flash(_('Too many guests in one submission.'), "error")  #validação é apanhada 1o em frontend
             return redirect(url_for('rvsp'))
 
         conn = sqlite3.connect(app.config['DB_LOCATION'])
@@ -173,10 +177,13 @@ def rvsp():
 
         for name in names:
             name = name.strip()
-
+            if not name:
+                continue
             if len(name) > 40:
-                # flash(_('Name must be 40 characters or fewer.')) # Not being used
-                conn.close()
+                #flash(_('Name must be 40 characters or fewer.'), "error") #validação é apanhada 1o em frontend
+                return redirect(url_for('rvsp'))
+            if not re.match(r"^[\w\s\-'.]+$", name):
+                #flash(_('Name contains invalid characters.'), "error") #validação é apanhada 1o em frontend
                 return redirect(url_for('rvsp'))
 
             if name:
