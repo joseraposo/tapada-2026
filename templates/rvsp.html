@@ -21,20 +21,24 @@
         </form>
 
         <script>
+            const labelText = {{ _('Name of the guest') | tojson }};
+            const titleText = {{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') | tojson }};
+            const removeText = {{ _('Remove') | tojson }};
+
             document.getElementById('add-guest').addEventListener('click', function () {
                 const container = document.getElementById('guests-container');
                 const entry = document.createElement('div');
                 entry.classList.add('guest-entry');
                 entry.innerHTML = `
-                    <label>{{ _('Name of the guest') }}:</label>
+                    <label>${labelText}:</label>
                     <input
                         type="text"
                         name="name"
                         pattern="[A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF ]{1,40}"
                         maxlength="40"
-                        title="{{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') }}"
+                        title="${titleText}"
                         required>
-                    <button type="button" class="remove-guest">✕</button>
+                    <button type="button" class="remove-guest">${removeText}</button>
                 `;
                 container.appendChild(entry);
 
