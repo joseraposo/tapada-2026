@@ -1,12 +1,17 @@
 import logging
 import sqlite3
 from flask import Flask, render_template, request, redirect, url_for, session, flash, g, Response
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from flask_babel import Babel, gettext as _
 from config import Config
 
 # --- Application Setup ---
 app = Flask(__name__)
 app.config.from_object(Config)
+limiter = Limiter(app, key_func=get_remote_address)
+# --- Internationalization (i18n) Setup ---
+babel = Babel(app, locale_selector=get_locale)
 
 
 def get_locale():
@@ -17,26 +22,12 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-# --- Internationalization (i18n) Setup ---
-babel = Babel(app, locale_selector=get_locale)
-
-
 # Make the current language available in all templates
 @app.before_request
 def before_request():
     g.locale = str(get_locale())
     if 'logged_in' not in session:
         session['logged_in'] = False
-
-# --- Visitor Logging Setup ---
-# Set up a specific logger for visits
-visit_logger = logging.getLogger('visit_logger')
-visit_logger.setLevel(logging.INFO)
-handler = logging.FileHandler('visits.log')
-formatter = logging.Formatter('%(asctime)s - %(message)s')
-handler.setFormatter(formatter)
-visit_logger.addHandler(handler)
-
 
 
 # --- DB ---
@@ -65,6 +56,7 @@ def set_language(lang=None):
     return redirect(request.referrer or url_for('index'))
 
 @app.route('/login', methods=['GET', 'POST'])
+@limiter.limit("15 per minute")
 def login():
     if session.get('logged_in'):
         return redirect(url_for('index'))
@@ -73,11 +65,6 @@ def login():
         entered_code = request.form.get('code')
         if entered_code == app.config['EVENT_ACCESS_CODE']:
             session['logged_in'] = True
-            
-            # Log the successful visit
-            ip_address = request.remote_addr
-            user_agent = request.headers.get('User-Agent')
-            visit_logger.info(f"Successful login from IP: {ip_address}, User-Agent: {user_agent}")
             
             return redirect(url_for('index'))
         else:
@@ -94,6 +81,7 @@ def logout():
 
 # This function checks if the user is logged in before accessing protected pages
 def login_required(f):
+    @wraps(f)
     def decorated_function(*args, **kwargs):
         if not session.get('logged_in'):
             return redirect(url_for('login'))
@@ -177,14 +165,14 @@ def rvsp():
             flash(_('Please add at least one guest.'))
             return redirect(url_for('rvsp'))
 
-        conn = sqlite3.connect("guests.db")
+        conn = sqlite3.connect(app.config['DB_LOCATION'])
         cursor = conn.cursor()
 
         for name in names:
             name = name.strip()
 
             if len(name) > 40:
-                flash(_('Name must be 40 characters or fewer.'))
+                # flash(_('Name must be 40 characters or fewer.')) # Not being used
                 conn.close()
                 return redirect(url_for('rvsp'))
 
@@ -200,6 +188,7 @@ def rvsp():
 
 
 @app.route("/thank-you")
+@login_required
 def thank_you():
     return render_template('thankyou.html')
 
