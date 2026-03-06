@@ -4,14 +4,13 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_babel import Babel, gettext as _
+from functools import wraps
 from config import Config
 
 # --- Application Setup ---
 app = Flask(__name__)
 app.config.from_object(Config)
-limiter = Limiter(app, key_func=get_remote_address)
-# --- Internationalization (i18n) Setup ---
-babel = Babel(app, locale_selector=get_locale)
+limiter = Limiter(get_remote_address, app=app)
 
 
 def get_locale():
@@ -20,6 +19,10 @@ def get_locale():
         return session['language']
     # 2. Otherwise, try to use the browser's preferred language
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+
+# --- Internationalization (i18n) Setup ---
+babel = Babel(app, locale_selector=get_locale)
 
 
 # Make the current language available in all templates
