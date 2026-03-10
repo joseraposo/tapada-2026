@@ -16,14 +16,15 @@
         <div class="container">
             <h1>{{ _('Lúcia & Zé´s Wedding') }}</h1>
             <nav>
-                <ul>
-                    <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>  <!-- #url_for: generates the correct URL for a Flask route, being index-->
-                    <li><a href="{{ url_for('faq') }}">{{ _('FAQ') }}</a></li>
-                    <li><a href="{{ url_for('map_page') }}">{{ _('Map & Location') }}</a></li>
+                <button class="nav-toggle" id="nav-toggle">☰</button> <!-- Hamburguer menu - mobile friendly -->
+                <ul id="nav-menu">
+	                <li><a href="{{ url_for('index') }}">{{ _('Home') }}</a></li>
+	                <li><a href="{{ url_for('faq') }}">{{ _('FAQ') }}</a></li>
+	                <li><a href="{{ url_for('map_page') }}">{{ _('Map & Location') }}</a></li>
                     <li><a href="{{ url_for('rvsp') }}">{{ _('Confirm attendance/RVSP') }}</a></li>
-                    <li><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
-                </ul>
-            </nav>
+	                <li><a href="{{ url_for('logout') }}">{{ _('Logout') }}</a></li>
+	            </ul>
+	        </nav>
             <div class="language-selector">
                 <a href="{{ url_for('set_language', lang='en') }}"><img src="{{ url_for('static', filename='img/flag_gb.png') }}" alt="English"></a>
                 <a href="{{ url_for('set_language', lang='pt') }}"><img src="{{ url_for('static', filename='img/flag_pt.png') }}" alt="Português"></a>
@@ -47,5 +48,10 @@
             <p>&copy; 2026 {{ _('Lúcia e Zé - Event Organizers') }}. {{ _('All rights reserved.') }}</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>

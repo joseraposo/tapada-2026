@@ -16,8 +16,8 @@
             -->
             <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3102.3325948752395!2d-9.29626098092518!3d38.962072906736594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-PT!2spt!4v1771257663233!5m2!1spt-PT!2spt"
-                    width="800"
-                    height="600"
+                    width="100%"
+                    height="auto"
                     style="border:0;"
                     allowfullscreen=""
                     loading="lazy"
@@ -28,14 +28,10 @@
         <div>
             <h3>{{ _('Entrance') }}</h3>
             <p>{{ _('The entrance is done through the main gates at Tapada Nacional de Mafra; then, you must turn left through a second, smaller gate, and follow through the road (by car!) to arrive at the venue, near Casa de Hóspedes da Tapada.') }}</p>
-            <a><img src="{{ url_for('static', filename='img/trajeto.png') }}"
-                    width="800"
-                    height="600">
+            <a><img src="{{ url_for('static', filename='img/trajeto.png') }}">
             </a>
             <p>{{ _('Casa de Hóspedes da Tapada.') }}</p>
-            <a><img src="{{ url_for('static', filename='img/casahospedes.png') }}"
-                    width="800"
-                    height="350">
+            <a><img src="{{ url_for('static', filename='img/casahospedes.png') }}">
             </a>
         </div>
     </div>

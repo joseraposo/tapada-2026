@@ -81,6 +81,15 @@ main {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Main Content - alterado para justificado na FAQ section*/
+.faq-section {
+    text-align: justify;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
 .tictac {
     text-align: center;
 }
@@ -107,12 +116,105 @@ main {
     margin-top: 0;
 }
 
-/* Map Section */
-.map-container {
-    margin: 20px 0;
-    border-radius: 8px;
-    overflow: hidden;
+/* --- Base responsive layout --- */
+* {
+    box-sizing: border-box;
 }
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* --- Nav hamburger --- */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+
+/* --- Map & images --- */
+
+/* images only */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* iframe separately — no height: auto */
+.map-container iframe {
+    max-width: 100%;
+}
+
+.map-container {
+	 overflow: visible;
+}
+
+
+/* --- RSVP form --- */
+.guest-entry input {
+    width: 30%;
+}
+
+/* --- Mobile breakpoint --- */
+@media (max-width: 768px) {
+
+    /* Nav */
+    .nav-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Header stack */
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Language selector */
+    .language-selector {
+        margin-top: 0.5rem;
+    }
+
+    /* Map iframe */
+    .map-container iframe {
+        width: 100%;
+        height: 350px;
+    }
+
+    /* Buttons */
+    button, input[type="submit"] {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+
+
 
 /* Footer */
 footer {
@@ -189,4 +291,21 @@ footer {
 
 .login-container button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 24px;  /* slightly reduce padding on small screens */
+    }
+
+    .login-container input {
+        width: 100%;
+        margin-top: 0.5rem;
+        box-sizing: border-box;  /* prevents overflow caused by width + padding */
+    }
+
+    .login-container button {
+        margin-top: 0.5rem;
+    }
 }
