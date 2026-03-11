@@ -81,6 +81,15 @@ main {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
+/* Main Content - alterado para justificado na FAQ section*/
+.faq-section {
+    text-align: justify;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
 .tictac {
     text-align: center;
 }
@@ -107,12 +116,128 @@ main {
     margin-top: 0;
 }
 
-/* Map Section */
-.map-container {
-    margin: 20px 0;
-    border-radius: 8px;
-    overflow: hidden;
+/* --- Base responsive layout --- */
+* {
+    box-sizing: border-box;
 }
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* --- Nav hamburger --- */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+
+/* --- Map & images --- */
+
+/* images only */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* iframe separately — no height: auto */
+.map-container iframe {
+    max-width: 100%;
+    width: 100%;
+    height: 500px
+}
+
+.map-container {
+	 overflow: visible;
+}
+
+
+/* --- RSVP form --- */
+.guest-entry input {
+    width: 30%;
+}
+
+/* --- Mobile breakpoint --- */
+@media (max-width: 768px) {
+
+    /* Nav */
+    .nav-toggle {
+        display: block;
+        margin-right: auto;
+        width: auto;       /* override the general button { width: 100% } below */
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Header stack */
+    header .container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+    }
+
+    header h1 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* Language selector */
+    .language-selector {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 0;
+        justify-self: end;
+        align-items: center;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Map iframe */
+    .map-container iframe {
+        width: 100%;
+        height: 350px;
+    }
+
+    /* Buttons */
+    button, input[type="submit"] {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
 
 /* Footer */
 footer {
@@ -189,4 +314,209 @@ footer {
 
 .login-container button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 24px;  /* slightly reduce padding on small screens */
+    }
+
+    .login-container input {
+        width: 100%;
+        margin-top: 0.5rem;
+        box-sizing: border-box;  /* prevents overflow caused by width + padding */
+    }
+
+    .login-container button {
+        margin-top: 0.5rem;
+    }
+}
+
+/* =============================================
+   RVSP FORM — add these rules to your style.css
+   ============================================= */
+
+.rvsp-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 40px;
+}
+
+.rvsp-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rvsp-header h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #3A443A;
+}
+
+.rvsp-subtitle {
+    color: #888;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- Guest entries --- */
+#guests-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.guest-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.guest-entry label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3A443A;
+}
+
+.guest-entry input[type="text"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #d4d4d4;
+    border-radius: 6px;
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    color: #333;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.guest-entry input[type="text"]:focus {
+    outline: none;
+    border-color: #3A443A;
+    box-shadow: 0 0 0 3px rgba(58, 68, 58, 0.1);
+    background: #fff;
+}
+
+/* Row with input + remove button */
+.guest-input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.guest-input-row input[type="text"] {
+    flex: 1;
+}
+
+/* --- New entry fade-in animation --- */
+.guest-entry--new {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.guest-entry--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Buttons --- */
+.rvsp-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-remove {
+    font-family: "Playfair Display", serif;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-primary {
+    background-color: #3A443A;
+    color: #fff;
+    padding: 14px 28px;
+    flex: 1;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(58, 68, 58, 0.25);
+}
+
+.btn-primary:hover {
+    background-color: #2d352d;
+    box-shadow: 0 4px 12px rgba(58, 68, 58, 0.35);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #3A443A;
+    padding: 13px 20px;
+    border: 1.5px solid #3A443A;
+    flex: 0 0 auto;
+}
+
+.btn-secondary:hover {
+    background-color: #3A443A;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-secondary:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-remove {
+    background-color: transparent;
+    color: #b0b0b0;
+    padding: 8px 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.btn-remove:hover {
+    background-color: #fdf0f0;
+    color: #c0392b;
+    border-color: #c0392b;
+}
+
+.btn-icon {
+    font-style: normal;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .rvsp-section {
+        padding: 32px 20px;
+    }
+
+    .rvsp-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+    }
 }

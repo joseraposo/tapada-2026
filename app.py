@@ -131,7 +131,7 @@ def faq():
         },
         {
             "question": _("By when should I let you know if I’ll be attending?"),
-            "answer": _("Please, give us your answer by 31/03/2026.")
+            "answer": _("Please, give us your answer by 30/04/2026.")
         },
         {
             "question": _("How should I let you know if I’ll be attending?"),
@@ -139,11 +139,11 @@ def faq():
         },
         {
             "question": _("Are kids welcome?"),
-            "answer": _("Children are welcome, but, please, remember to add their names to the RSVP form so we can include them in our final headcount.")
+            "answer": _("Children are welcome, but please remember to add their names to the RSVP form so we can include them in our final headcount.")
         },
         {
             "question": _("OMG, I see a deer, may I go pet him?"),
-            "answer": _("Please, bear in mind that Tapada is a wildlife reserve - while the animals may be used to human visitors, they remain wild. For their safety and yours, we kindly ask that you do not approach or feed them.")
+            "answer": _("Please, bear in mind that Tapada is a wildlife reserve - while the animals may tolerate human visitors, they remain wild. For their safety and yours, we kindly ask that you do not approach or feed them.")
         },
         {
             "question": _("I have a question that's not answered in the FAQ section..."),

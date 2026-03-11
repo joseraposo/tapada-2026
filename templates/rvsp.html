@@ -1,30 +1,44 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="content-section">
-        <form method="POST">
+    <div class="content-section rvsp-section">
+
+        <div class="rvsp-header">
+            <h2>{{ _('Confirm your attendance') }}</h2>
+            <p class="rvsp-subtitle">{{ _('Please enter the name of each attending guest below.') }}</p>
+        </div>
+
+        <form method="POST" class="rvsp-form">
             <div id="guests-container">
                 <div class="guest-entry">
-                    <label>{{ _('Name of the guest') }}:</label>
+                    <label>{{ _('Name of the guest') }}</label>
                     <input
                             type="text"
                             name="name"
                             pattern="[A-Za-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF ]{1,40}"
                             maxlength="40"
+                            placeholder="{{ _('Full name') }}"
                             title="{{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') }}"
                             required>
                 </div>
             </div>
 
-            <button type="button" id="add-guest">{{ _('Add guest') }}</button>
-            <button type="submit">{{ _('Confirm attendance') }}</button>
+            <div class="rvsp-actions">
+                <button type="button" id="add-guest" class="btn-secondary">
+                    <span class="btn-icon">＋</span> {{ _('Add guest') }}
+                </button>
+                <button type="submit" class="btn-primary">
+                    {{ _('Confirm attendance') }} <span class="btn-icon">→</span>
+                </button>
+            </div>
         </form>
 
         <script>
-            const labelText = {{ _('Name of the guest') | tojson }};
-            const titleText = {{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') | tojson }};
-            const removeText = {{ _('Remove') | tojson }};
-            const maxGuestsText = {{ _('Maximum of 10 guests per submission.') | tojson }};
+            const labelText = "{{ _('Name of the guest') | tojson }}";
+            const titleText = "{{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') | tojson }}";
+            const placeholderText = "{{ _('Full name') | tojson }}";
+            const removeText = "{{ _('Remove') | tojson }}";
+            const maxGuestsText = "{{ _('Maximum of 10 guests per submission.') | tojson }}";
             const MAX_GUESTS = 10;
 
             const addButton = document.getElementById('add-guest');
@@ -39,19 +53,25 @@
                 }
 
                 const entry = document.createElement('div');
-                entry.classList.add('guest-entry');
+                entry.classList.add('guest-entry', 'guest-entry--new');
                 entry.innerHTML = `
-                    <label>${labelText}:</label>
-                    <input
-                        type="text"
-                        name="name"
-                        pattern="[A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF ]{1,40}"
-                        maxlength="40"
-                        title="${titleText}"
-                        required>
-                    <button type="button" class="remove-guest">${removeText}</button>
+                    <label>${labelText}</label>
+                    <div class="guest-input-row">
+                        <input
+                            type="text"
+                            name="name"
+                            pattern="[A-Za-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u00FF ]{1,40}"
+                            maxlength="40"
+                            placeholder="${placeholderText}"
+                            title="${titleText}"
+                            required>
+                        <button type="button" class="btn-remove remove-guest">${removeText}</button>
+                    </div>
                 `;
                 container.appendChild(entry);
+
+                // Trigger animation
+                requestAnimationFrame(() => entry.classList.add('guest-entry--visible'));
 
                 if (container.querySelectorAll('.guest-entry').length >= MAX_GUESTS) {
                     addButton.disabled = true;

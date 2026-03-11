@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-06 16:37+0000\n"
+"POT-Creation-Date: 2026-03-11 17:00+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -100,7 +100,7 @@ msgid "By when should I let you know if I’ll be attending?"
 msgstr ""
 
 #: app.py:134
-msgid "Please, give us your answer by 31/03/2026."
+msgid "Please, give us your answer by 30/04/2026."
 msgstr ""
 
 #: app.py:137
@@ -120,8 +120,8 @@ msgstr ""
 
 #: app.py:142
 msgid ""
-"Children are welcome, but, please, remember to add their names to the "
-"RSVP form so we can include them in our final headcount."
+"Children are welcome, but please remember to add their names to the RSVP "
+"form so we can include them in our final headcount."
 msgstr ""
 
 #: app.py:145
@@ -131,8 +131,8 @@ msgstr ""
 #: app.py:146
 msgid ""
 "Please, bear in mind that Tapada is a wildlife reserve - while the "
-"animals may be used to human visitors, they remain wild. For their safety"
-" and yours, we kindly ask that you do not approach or feed them."
+"animals may tolerate human visitors, they remain wild. For their safety "
+"and yours, we kindly ask that you do not approach or feed them."
 msgstr ""
 
 #: app.py:149
@@ -144,10 +144,6 @@ msgid ""
 "In case you have extra questions, feel free to reach our costumer service"
 " by phone at 00351917200606 or 00351961115694 (phone calls, SMS or "
 "whatsapp), Mon-Fri from 8 a.m.to 8 p.m."
-msgstr ""
-
-#: app.py:168
-msgid "Please add at least one guest."
 msgstr ""
 
 #: templates/faq.html:5
@@ -167,10 +163,6 @@ msgstr ""
 "will find all the information you need for the event."
 
 #: templates/index.html:9
-msgid "Event Banner"
-msgstr "Event Banner"
-
-#: templates/index.html:10
 #, fuzzy
 msgid ""
 "Explore the sections above to find answers to frequently asked questions,"
@@ -178,6 +170,10 @@ msgid ""
 msgstr ""
 "Explore the sections above to find answers to frequently asked questions "
 "and directions to the venue."
+
+#: templates/index.html:10
+msgid "Event Banner"
+msgstr "Event Banner"
 
 #: templates/index.html:13
 msgid "Tic Tac!"
@@ -187,7 +183,7 @@ msgstr ""
 msgid "Event Information"
 msgstr "Event Information"
 
-#: templates/layout.html:17
+#: templates/layout.html:16
 msgid "Lúcia & Zé´s Wedding"
 msgstr ""
 
@@ -224,19 +220,19 @@ msgstr "All rights reserved."
 msgid "Access Event"
 msgstr "Access Event"
 
-#: templates/login.html:11
+#: templates/login.html:13
 msgid "Event Access"
 msgstr "Event Access"
 
-#: templates/login.html:12
+#: templates/login.html:14
 msgid "Please enter the access code provided in your invitation."
 msgstr "Please enter the access code provided in your invitation."
 
-#: templates/login.html:23
+#: templates/login.html:25
 msgid "Access Code"
 msgstr "Access Code"
 
-#: templates/login.html:24
+#: templates/login.html:26
 msgid "Enter"
 msgstr "Enter"
 
@@ -249,7 +245,7 @@ msgid "Casa de Hóspedes da Tapada de Mafra, Portão do Codeçal, 2640-602 Mafra
 msgstr ""
 
 #: templates/map.html:8
-msgid "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W"
+msgid "Coordinates: 38°57'39.0\"N 9°17'35.4\"W"
 msgstr ""
 
 #: templates/map.html:9
@@ -259,12 +255,12 @@ msgstr ""
 "The event will be held at the following location. You can use the "
 "interactive map below for directions."
 
-#: templates/map.html:29
+#: templates/map.html:28
 #, fuzzy
 msgid "Entrance"
 msgstr "Enter"
 
-#: templates/map.html:30
+#: templates/map.html:29
 msgid ""
 "The entrance is done through the main gates at Tapada Nacional de Mafra; "
 "then, you must turn left through a second, smaller gate, and follow "
@@ -272,37 +268,61 @@ msgid ""
 "da Tapada."
 msgstr ""
 
-#: templates/map.html:35
+#: templates/map.html:32
 msgid "Casa de Hóspedes da Tapada."
 msgstr ""
 
-#: templates/rvsp.html:8 templates/rvsp.html:24
+#: templates/rvsp.html:7
+msgid "Confirm your attendance"
+msgstr ""
+
+#: templates/rvsp.html:8
+msgid "Please enter the name of each attending guest below."
+msgstr ""
+
+#: templates/rvsp.html:14 templates/rvsp.html:37
 msgid "Name of the guest"
 msgstr ""
 
-#: templates/rvsp.html:14 templates/rvsp.html:25
+#: templates/rvsp.html:20 templates/rvsp.html:39
+msgid "Full name"
+msgstr ""
+
+#: templates/rvsp.html:21 templates/rvsp.html:38
 msgid ""
 "We all love a good riddle, but please, use only letters to refer to the "
 "attending guest..."
 msgstr ""
 
-#: templates/rvsp.html:19
+#: templates/rvsp.html:28
 #, fuzzy
 msgid "Add guest"
 msgstr "Address"
 
-#: templates/rvsp.html:20
+#: templates/rvsp.html:31
 msgid "Confirm attendance"
 msgstr ""
 
-#: templates/rvsp.html:26
+#: templates/rvsp.html:40
 msgid "Remove"
+msgstr ""
+
+#: templates/rvsp.html:41
+msgid "Maximum of 10 guests per submission."
 msgstr ""
 
 #: templates/thankyou.html:5
 #, fuzzy
 msgid "Thank you for confirming!"
 msgstr "Event Information"
+
+#: templates/thankyou.html:6
+msgid "We're so happy you'll be joining us. See you on the day!"
+msgstr ""
+
+#: templates/thankyou.html:7
+msgid "Back to home"
+msgstr ""
 
 #: venv/lib/python3.10/site-packages/click/_termui_impl.py:613
 #, python-brace-format
@@ -640,5 +660,31 @@ msgstr[1] ""
 #~ msgstr ""
 
 #~ msgid "Confirm"
+#~ msgstr ""
+
+#~ msgid "Please add at least one guest."
+#~ msgstr ""
+
+#~ msgid "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W"
+#~ msgstr ""
+
+#~ msgid "Please, give us your answer by 31/03/2026."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Children are welcome, but, please, "
+#~ "remember to add their names to the"
+#~ " RSVP form so we can include "
+#~ "them in our final headcount."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please, bear in mind that Tapada "
+#~ "is a wildlife reserve - while the"
+#~ " animals may be used to human "
+#~ "visitors, they remain wild. For their"
+#~ " safety and yours, we kindly ask "
+#~ "that you do not approach or feed"
+#~ " them."
 #~ msgstr ""
 

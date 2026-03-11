@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="content-section">
-        <h2>{{ _('Thank you for confirming!') }}</h2> <br>
+    <div class="content-section thankyou-section">
+        <h2>{{ _('Thank you for confirming!') }}</h2>
+        <p>{{ _("We're so happy you'll be joining us. See you on the day!") }}</p>
+        <a href="{{ url_for('index') }}" class="btn-primary">{{ _('Back to home') }}</a>
     </div>
 {% endblock %}

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-06 16:37+0000\n"
+"POT-Creation-Date: 2026-03-11 17:00+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -88,14 +88,14 @@ msgid ""
 "\n"
 " P.S.: WE STRONGLY ADVISE YOU TO BRING YOUR SNEAKERS ALONG!"
 msgstr ""
-"O dresscode é ´They're taking the hobbits to Isengard! 🧙🏻‍♂ 🧝‍♂'!(Estamos"
-" a gozar… a menos que já estivesses a fazer planos para a capa e o "
-"bastão!) Brincadeiras à parte, sugerimos considerares algo ´smartcasual´,"
-" pois pretendemos que o dia se assemelhe mais um encontro descontraído "
-"entre amigos — uma festa no jardim com muitos jogos, comida e gargalhadas"
-" — do que um evento formal. Dito isto, queremos que os nossos convidados "
-"se sintam à vontade para se vestirem como quiserem… apenas deixem o "
-"branco para a noiva 😉.\n"
+"O dress code é ´They're taking the hobbits to Isengard! 🧙🏻‍♂ 🧝‍♂'! "
+"(Estamos a gozar… a menos que já estivesses a fazer planos para a capa e "
+"o bastão!) Brincadeiras à parte, sugerimos considerares algo ´smart "
+"casual´, pois pretendemos que o dia se assemelhe mais um encontro "
+"descontraído entre amigos — uma festa no jardim com muitos jogos, comida "
+"e gargalhadas — do que um evento formal. Dito isto, queremos que os "
+"nossos convidados se sintam à vontade para se vestirem como quiserem… "
+"apenas deixem o branco para a noiva 😉.\n"
 "\n"
 "P.S.: RECOMENDAMOS FORTEMENTE QUE TRAGAM TÉNIS, SEJA COMO CALÇADO "
 "PRINCIPAL OU SOS!"
@@ -125,8 +125,9 @@ msgid "By when should I let you know if I’ll be attending?"
 msgstr "Até quando devo confirmar a minha presença?"
 
 #: app.py:134
-msgid "Please, give us your answer by 31/03/2026."
-msgstr "Por favor, dá-nos a tua resposta até dia 31/03/2026"
+#, fuzzy
+msgid "Please, give us your answer by 30/04/2026."
+msgstr "Por favor, dá-nos a tua resposta até dia 30/04/2026"
 
 #: app.py:137
 msgid "How should I let you know if I’ll be attending?"
@@ -139,7 +140,7 @@ msgid ""
 "the attending guest(s). "
 msgstr ""
 "Como somos muito organisadinhos, preparámos um pequeno formulário, ao "
-"qual podes aceder na secção CONFIRMAR PRESENÇA/RVSPpara preencheres com "
+"qual podes aceder na secção CONFIRMAR PRESENÇA/RVSP para preencheres com "
 "o(s) nomes do(s) convidado(s) que irão estar presentes."
 
 #: app.py:141
@@ -147,9 +148,10 @@ msgid "Are kids welcome?"
 msgstr "Os meus filhos podem ir?"
 
 #: app.py:142
+#, fuzzy
 msgid ""
-"Children are welcome, but, please, remember to add their names to the "
-"RSVP form so we can include them in our final headcount."
+"Children are welcome, but please remember to add their names to the RSVP "
+"form so we can include them in our final headcount."
 msgstr ""
 "Os filhos dos nossos amigos são bem-vindos, mas, por favor, precisam "
 "também de ser registados no formulário RVSP (incluindo bebés), para que "
@@ -160,10 +162,11 @@ msgid "OMG, I see a deer, may I go pet him?"
 msgstr "OMG, estou a ver um veado, posso ir fazer-lhe festas?!"
 
 #: app.py:146
+#, fuzzy
 msgid ""
 "Please, bear in mind that Tapada is a wildlife reserve - while the "
-"animals may be used to human visitors, they remain wild. For their safety"
-" and yours, we kindly ask that you do not approach or feed them."
+"animals may tolerate human visitors, they remain wild. For their safety "
+"and yours, we kindly ask that you do not approach or feed them."
 msgstr ""
 "Por favor, tem em atenção que a Tapada é uma reserva natural - apesar dos"
 " animais estarem muito habituados à presença humana, continuam a ser "
@@ -185,10 +188,6 @@ msgstr ""
 "00351917200606 ou 00351961115694 (chamadas, SMS ou whatsapp), de Seg-Sex,"
 " das 8:30 às 20:00 horas."
 
-#: app.py:168
-msgid "Please add at least one guest."
-msgstr ""
-
 #: templates/faq.html:5
 msgid "Frequently Asked Questions"
 msgstr "Perguntas Frequentes"
@@ -202,20 +201,20 @@ msgid ""
 "We are thrilled to have you join us for this special occasion. Here you "
 "will find all the information you need for the event."
 msgstr ""
-"Estamos muito felizes por se juntar a nós nesta ocasião especial. Aqui "
-"encontrará toda a informação que precisa para o evento."
+"Estamos muito felizes por te juntares a nós nesta ocasião especial. Aqui "
+"encontrarás toda a informação que precisas para o evento."
 
 #: templates/index.html:9
-msgid "Event Banner"
-msgstr "Banner do Evento"
-
-#: templates/index.html:10
 msgid ""
 "Explore the sections above to find answers to frequently asked questions,"
 " directions to the venue and RVSP form."
 msgstr ""
 "Explora as secções acima para encontrar respostas a perguntas frequentes,"
 " direções para o local e o formulário RVSP."
+
+#: templates/index.html:10
+msgid "Event Banner"
+msgstr "Banner do Evento"
 
 #: templates/index.html:13
 msgid "Tic Tac!"
@@ -225,7 +224,7 @@ msgstr ""
 msgid "Event Information"
 msgstr "Informações do Evento"
 
-#: templates/layout.html:17
+#: templates/layout.html:16
 msgid "Lúcia & Zé´s Wedding"
 msgstr "Casamento Lúcia & Zé"
 
@@ -261,19 +260,19 @@ msgstr ""
 msgid "Access Event"
 msgstr "Aceder ao Evento"
 
-#: templates/login.html:11
+#: templates/login.html:13
 msgid "Event Access"
 msgstr "Acesso ao Evento"
 
-#: templates/login.html:12
+#: templates/login.html:14
 msgid "Please enter the access code provided in your invitation."
 msgstr "Por favor, insira o código de acesso fornecido no seu convite."
 
-#: templates/login.html:23
+#: templates/login.html:25
 msgid "Access Code"
 msgstr "Código de Acesso"
 
-#: templates/login.html:24
+#: templates/login.html:26
 msgid "Enter"
 msgstr "Entrar"
 
@@ -286,20 +285,21 @@ msgid "Casa de Hóspedes da Tapada de Mafra, Portão do Codeçal, 2640-602 Mafra
 msgstr ""
 
 #: templates/map.html:8
-msgid "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W"
-msgstr ""
+msgid "Coordinates: 38°57'39.0\"N 9°17'35.4\"W"
+msgstr "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W\""
 
 #: templates/map.html:9
 msgid "You can use the interactive map below for directions."
 msgstr ""
-"O evento será realizado no seguinte local. Pode usar o mapa interativo "
-"abaixo para obter direções."
+"O evento será realizado no local abaixo. Podes usar o mapa interativo "
+"para obteres direções."
 
-#: templates/map.html:29
+#: templates/map.html:28
 msgid "Entrance"
 msgstr "Entrada"
 
-#: templates/map.html:30
+#: templates/map.html:29
+#, fuzzy
 msgid ""
 "The entrance is done through the main gates at Tapada Nacional de Mafra; "
 "then, you must turn left through a second, smaller gate, and follow "
@@ -310,15 +310,28 @@ msgstr ""
 "deves depois seguir (de carro!) por um segundo portão mais pequeno à tua "
 "esquerda, até chegares ao local do evento, perto da Casa de Hóspedes."
 
-#: templates/map.html:35
+#: templates/map.html:32
 msgid "Casa de Hóspedes da Tapada."
 msgstr ""
 
-#: templates/rvsp.html:8 templates/rvsp.html:24
+#: templates/rvsp.html:7
+#, fuzzy
+msgid "Confirm your attendance"
+msgstr "Confirmar presença"
+
+#: templates/rvsp.html:8
+msgid "Please enter the name of each attending guest below."
+msgstr ""
+
+#: templates/rvsp.html:14 templates/rvsp.html:37
 msgid "Name of the guest"
 msgstr "Nome do convidado"
 
-#: templates/rvsp.html:14 templates/rvsp.html:25
+#: templates/rvsp.html:20 templates/rvsp.html:39
+msgid "Full name"
+msgstr ""
+
+#: templates/rvsp.html:21 templates/rvsp.html:38
 msgid ""
 "We all love a good riddle, but please, use only letters to refer to the "
 "attending guest..."
@@ -326,21 +339,33 @@ msgstr ""
 "Todos apreciamos uma boa adivinha, mas, por favor, usa apenas letras para"
 " escreveres o nome do convidado..."
 
-#: templates/rvsp.html:19
+#: templates/rvsp.html:28
 msgid "Add guest"
 msgstr "Adicionar convidado"
 
-#: templates/rvsp.html:20
+#: templates/rvsp.html:31
 msgid "Confirm attendance"
 msgstr "Confirmar presença"
 
-#: templates/rvsp.html:26
+#: templates/rvsp.html:40
 msgid "Remove"
 msgstr "Remover"
+
+#: templates/rvsp.html:41
+msgid "Maximum of 10 guests per submission."
+msgstr ""
 
 #: templates/thankyou.html:5
 msgid "Thank you for confirming!"
 msgstr "Obrigado pela confirmação!"
+
+#: templates/thankyou.html:6
+msgid "We're so happy you'll be joining us. See you on the day!"
+msgstr "Ficamos muito felizes com a tua presença, vemo-nos em Setembro!"
+
+#: templates/thankyou.html:7
+msgid "Back to home"
+msgstr ""
 
 #: venv/lib/python3.10/site-packages/click/_termui_impl.py:613
 #, python-brace-format
@@ -672,5 +697,11 @@ msgstr[1] ""
 #~ msgstr ""
 
 #~ msgid "Confirm"
+#~ msgstr ""
+
+#~ msgid "Please add at least one guest."
+#~ msgstr ""
+
+#~ msgid "Coordenadas: 38°57'39.0\"N 9°17'35.4\"W"
 #~ msgstr ""
 
