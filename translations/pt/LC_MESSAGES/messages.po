@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-11 17:00+0000\n"
+"POT-Creation-Date: 2026-03-12 14:21+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pt\n"
@@ -125,7 +125,6 @@ msgid "By when should I let you know if I’ll be attending?"
 msgstr "Até quando devo confirmar a minha presença?"
 
 #: app.py:134
-#, fuzzy
 msgid "Please, give us your answer by 30/04/2026."
 msgstr "Por favor, dá-nos a tua resposta até dia 30/04/2026"
 
@@ -148,7 +147,6 @@ msgid "Are kids welcome?"
 msgstr "Os meus filhos podem ir?"
 
 #: app.py:142
-#, fuzzy
 msgid ""
 "Children are welcome, but please remember to add their names to the RSVP "
 "form so we can include them in our final headcount."
@@ -162,7 +160,6 @@ msgid "OMG, I see a deer, may I go pet him?"
 msgstr "OMG, estou a ver um veado, posso ir fazer-lhe festas?!"
 
 #: app.py:146
-#, fuzzy
 msgid ""
 "Please, bear in mind that Tapada is a wildlife reserve - while the "
 "animals may tolerate human visitors, they remain wild. For their safety "
@@ -299,7 +296,6 @@ msgid "Entrance"
 msgstr "Entrada"
 
 #: templates/map.html:29
-#, fuzzy
 msgid ""
 "The entrance is done through the main gates at Tapada Nacional de Mafra; "
 "then, you must turn left through a second, smaller gate, and follow "
@@ -315,13 +311,12 @@ msgid "Casa de Hóspedes da Tapada."
 msgstr ""
 
 #: templates/rvsp.html:7
-#, fuzzy
 msgid "Confirm your attendance"
-msgstr "Confirmar presença"
+msgstr "Confirma a tua presença"
 
 #: templates/rvsp.html:8
 msgid "Please enter the name of each attending guest below."
-msgstr ""
+msgstr "Insere o nome de cada convidado no formulário abaixo."
 
 #: templates/rvsp.html:14 templates/rvsp.html:37
 msgid "Name of the guest"
@@ -329,7 +324,7 @@ msgstr "Nome do convidado"
 
 #: templates/rvsp.html:20 templates/rvsp.html:39
 msgid "Full name"
-msgstr ""
+msgstr "Nome completo"
 
 #: templates/rvsp.html:21 templates/rvsp.html:38
 msgid ""
@@ -353,7 +348,7 @@ msgstr "Remover"
 
 #: templates/rvsp.html:41
 msgid "Maximum of 10 guests per submission."
-msgstr ""
+msgstr "Registo máximo de 10 pessoas."
 
 #: templates/thankyou.html:5
 msgid "Thank you for confirming!"
@@ -365,7 +360,7 @@ msgstr "Ficamos muito felizes com a tua presença, vemo-nos em Setembro!"
 
 #: templates/thankyou.html:7
 msgid "Back to home"
-msgstr ""
+msgstr "Regressa à página principal"
 
 #: venv/lib/python3.10/site-packages/click/_termui_impl.py:613
 #, python-brace-format

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-03-11 17:00+0000\n"
+"POT-Creation-Date: 2026-03-12 14:21+0000\n"
 "PO-Revision-Date: 2023-10-27 10:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -84,16 +84,16 @@ msgid "Yes, free parking is available at the venue's main parking lot."
 msgstr "Yes, free parking is available at the venue's main parking lot."
 
 #: app.py:129
-#, fuzzy
 msgid "Can I bring a plus-one?"
-msgstr "Can I bring a guest?"
+msgstr "Can I bring a plus-one?"
 
 #: app.py:130
-#, fuzzy
 msgid ""
 "Please check your invitation. This event is invite-only, unless "
 "explicitly said otherwise."
-msgstr "Please check your invitation. This event is invite-only."
+msgstr ""
+"Please check your invitation. This event is invite-only, unless "
+"explicitly said otherwise."
 
 #: app.py:133
 msgid "By when should I let you know if I’ll be attending?"
@@ -163,13 +163,12 @@ msgstr ""
 "will find all the information you need for the event."
 
 #: templates/index.html:9
-#, fuzzy
 msgid ""
 "Explore the sections above to find answers to frequently asked questions,"
 " directions to the venue and RVSP form."
 msgstr ""
-"Explore the sections above to find answers to frequently asked questions "
-"and directions to the venue."
+"Explore the sections above to find answers to frequently asked questions,"
+" directions to the venue and RVSP form."
 
 #: templates/index.html:10
 msgid "Event Banner"
@@ -208,9 +207,8 @@ msgid "Logout"
 msgstr "Logout"
 
 #: templates/layout.html:47
-#, fuzzy
 msgid "Lúcia e Zé - Event Organizers"
-msgstr "Event Organizers"
+msgstr "Lúcia e Zé - Event Organizers"
 
 #: templates/layout.html:47
 msgid "All rights reserved."
@@ -249,16 +247,12 @@ msgid "Coordinates: 38°57'39.0\"N 9°17'35.4\"W"
 msgstr ""
 
 #: templates/map.html:9
-#, fuzzy
 msgid "You can use the interactive map below for directions."
-msgstr ""
-"The event will be held at the following location. You can use the "
-"interactive map below for directions."
+msgstr "You can use the interactive map below for directions."
 
 #: templates/map.html:28
-#, fuzzy
 msgid "Entrance"
-msgstr "Enter"
+msgstr "Entrance"
 
 #: templates/map.html:29
 msgid ""
@@ -295,9 +289,8 @@ msgid ""
 msgstr ""
 
 #: templates/rvsp.html:28
-#, fuzzy
 msgid "Add guest"
-msgstr "Address"
+msgstr "Add guest"
 
 #: templates/rvsp.html:31
 msgid "Confirm attendance"
@@ -312,9 +305,8 @@ msgid "Maximum of 10 guests per submission."
 msgstr ""
 
 #: templates/thankyou.html:5
-#, fuzzy
 msgid "Thank you for confirming!"
-msgstr "Event Information"
+msgstr "Thank you for confirming!"
 
 #: templates/thankyou.html:6
 msgid "We're so happy you'll be joining us. See you on the day!"
@@ -512,9 +504,8 @@ msgid "Couldn't detect Bash version, shell completion is not supported."
 msgstr ""
 
 #: venv/lib/python3.10/site-packages/click/termui.py:165
-#, fuzzy
 msgid "Repeat for confirmation"
-msgstr "Event Information"
+msgstr "Repeat for confirmation"
 
 #: venv/lib/python3.10/site-packages/click/termui.py:181
 msgid "Error: The value you entered was invalid."
