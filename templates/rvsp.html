@@ -34,11 +34,11 @@
         </form>
 
         <script>
-            const labelText = "{{ _('Name of the guest') | tojson }}";
-            const titleText = "{{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') | tojson }}";
-            const placeholderText = "{{ _('Full name') | tojson }}";
-            const removeText = "{{ _('Remove') | tojson }}";
-            const maxGuestsText = "{{ _('Maximum of 10 guests per submission.') | tojson }}";
+            const labelText = {{ _('Name of the guest') | tojson }};
+            const titleText = {{ _('We all love a good riddle, but please, use only letters to refer to the attending guest...') | tojson }};
+            const placeholderText = {{ _('Full name') | tojson }};
+            const removeText = {{ _('Remove') | tojson }};
+            const maxGuestsText = {{ _('Maximum of 10 guests per submission.') | tojson }};
             const MAX_GUESTS = 10;
 
             const addButton = document.getElementById('add-guest');
