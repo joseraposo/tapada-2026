@@ -147,7 +147,7 @@ def faq():
         },
         {
             "question": _("I have a question that's not answered in the FAQ section..."),
-            "answer": _("In case you have extra questions, feel free to reach our costumer service by phone at 00351917200606 or 00351961115694 (phone calls, SMS or whatsapp), Mon-Fri from 8 a.m.to 8 p.m.")
+            "answer": _("In case you have extra questions, feel free to reach our costumer service by phone at 00351917200606 or 00351961115694 (phone calls, SMS, WhatsApp, or Signal), Mon-Fri from 8 a.m.to 8 p.m.")
         }
 
     ]
