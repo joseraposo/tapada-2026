@@ -130,10 +130,6 @@ def faq():
             "answer": _("Please check your invitation. This event is invite-only, unless explicitly said otherwise.")
         },
         {
-            "question": _("By when should I let you know if I’ll be attending?"),
-            "answer": _("Please, give us your answer by 30/04/2026.")
-        },
-        {
             "question": _("How should I let you know if I’ll be attending?"),
             "answer": _("In true organised fashion, we’ve prepared a lovely little form in the CONFIRMAR PRESENÇA/RVSP section, for you to fill out with the name(s) of the attending guest(s). ")
         },
